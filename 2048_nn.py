@@ -32,17 +32,17 @@ test_y = test['move']
 class_names = ['Up', 'Right', 'Down', 'Left']
 
 model = Sequential()
-model.add(Dense(32, input_dim=16, activation='sigmoid'))
-model.add(Dense(256, activation='relu'))
-model.add(Dense(256, activation='relu'))
-model.add(Dense(256, activation='relu'))
+model.add(Dense(256, input_dim=16, activation='sigmoid'))
+# model.add(Dense(256, activation='relu'))
+model.add(Dense(512, activation='relu'))
+# model.add(Dense(256, activation='relu'))
+# model.add(Dense(128, activation='relu'))
 model.add(Dense(128, activation='relu'))
-model.add(Dense(32, activation='relu'))
 model.add(Dense(4, activation='softmax'))
 
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
-model.fit(train_X, train_y, epochs=1000)
+model.fit(train_X, train_y, epochs=1000, verbose=2)
 
 test_loss, test_acc = model.evaluate(test_X,  test_y, verbose=2)
 
