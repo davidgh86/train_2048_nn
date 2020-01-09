@@ -5,6 +5,7 @@ from numpy.random import RandomState
 from keras.models import Sequential
 from keras.layers import Dense
 
+
 def adapt(number):
     if number == 0:
         return 0
@@ -32,6 +33,12 @@ class_names = ['Up', 'Right', 'Down', 'Left']
 
 model = Sequential()
 model.add(Dense(32, input_dim=16, activation='sigmoid'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(128, activation='relu'))
+model.add(Dense(256, activation='relu'))
+model.add(Dense(128, activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
 model.add(Dense(16, activation='relu'))
 model.add(Dense(8, activation='relu'))
 model.add(Dense(4, activation='softmax'))
