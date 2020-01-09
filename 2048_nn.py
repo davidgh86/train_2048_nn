@@ -33,14 +33,11 @@ class_names = ['Up', 'Right', 'Down', 'Left']
 
 model = Sequential()
 model.add(Dense(32, input_dim=16, activation='sigmoid'))
-model.add(Dense(64, activation='relu'))
-model.add(Dense(128, activation='relu'))
+model.add(Dense(256, activation='relu'))
+model.add(Dense(256, activation='relu'))
 model.add(Dense(256, activation='relu'))
 model.add(Dense(128, activation='relu'))
-model.add(Dense(64, activation='relu'))
 model.add(Dense(32, activation='relu'))
-model.add(Dense(16, activation='relu'))
-model.add(Dense(8, activation='relu'))
 model.add(Dense(4, activation='softmax'))
 
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
