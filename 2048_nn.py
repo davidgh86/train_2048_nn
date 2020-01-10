@@ -1,6 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 import pandas as pd
-import math
 from numpy.random import RandomState
 from keras.models import Sequential
 from keras.layers import Dense
