@@ -38,3 +38,4 @@ error = getWrongValues(rf_val_predictions, val_y)/len(val_y)
 
 
 print("error: ", error)
+print("accuracy: ", 1-error)
